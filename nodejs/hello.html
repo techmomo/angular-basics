@@ -1,0 +1,164 @@
+<head>
+<style type="text/css">
+    .root{
+        background-color: aquamarine;
+        border: 1px solid;
+        color: blue;
+    }
+    .no-root{
+        background-color: cadetblue;
+        border: 3px dotted brown;
+        color: goldenrod;
+    }
+</style>
+    
+<script type="text/javascript">
+var user = {
+    id: 11,
+    name: 'Mohsin',
+    email: 'mo@gg.com'
+}
+let users = [
+    {
+        id: 1,
+        name: 'Mohsin'
+    },
+    {
+        id: 6,
+        name: 'Simpsons'
+    },
+    {
+        id: 2,
+        name: 'John'
+    },
+    {
+        id: 3,
+        name: 'Bob'
+    }
+]
+var counter = users.length;
+console.log(user);
+let jsonToStr = JSON.stringify(user);
+let strToJson = JSON.parse(jsonToStr);
+console.log(jsonToStr);
+console.log(strToJson);
+
+document.write("Hello JS");
+document.write("<br/>");
+document.write("<b>Welcome to JS</b>");
+
+const test = ()=>{
+    console.log('Test');
+}
+function clickMe(i){
+    console.log('Clicked Me! '+i);
+    //console.log();
+    document.getElementById("div1").innerHTML='<h2>Div is updated</h2>';
+    
+}
+function increment(){
+    users.push({ // add a new user object to the array
+        id: users.length + 1,
+        name : "Tom"
+    });
+    users.splice(1,0,{id:6,name:'Simpsons'}); // insert an object in array based on index
+    
+    //counter= counter + 1; // increment the counter
+    counter = users.length;
+    console.log(users);
+    
+    document.getElementById('counter').innerHTML=`<h2>Counter: ${counter}</h2>`;
+    // re-render user table
+    let userData='';
+    users.forEach(u=>{
+        userData+=`<tr>
+                        <td>${u.id}</td>
+                        <td>${u.name}</td>        
+                    </tr>`;
+    });
+    document.getElementById('users').innerHTML= userData;
+}
+function decrement(){
+    if(counter >=0 ){ 
+        counter= counter - 1; // decrement the counter
+        users.pop(); // delete the last user object from the array
+        counter = users.length;
+    }
+    users.splice(1,1); 
+    console.log('After SPlice');
+    console.log(users);
+    document.getElementById('counter').innerHTML=`<h2>Counter: ${counter}</h2>`;
+    // re-render user table
+    let userData='';
+    users.forEach(u=>{
+        userData+=`<tr>
+                        <td>${u.id}</td>
+                        <td>${u.name}</td>        
+                    </tr>`;
+    });
+    document.getElementById('users').innerHTML= userData;
+}
+
+function loadStartUp(){
+    let _html = `<input type="button" value="Root" onclick="rootMe(${counter});"/>`;
+    document.getElementById('root').innerHTML= `Main Content Goes Here.... ${_html}.....`;
+    document.getElementById('counter').innerHTML=`<h2>Counter: ${counter}</h2>`; // this is tilde not a comma
+    // document.getElementById('root').style.backgroundColor = 'grey';
+    // document.getElementById('root').style.border = 'solid';
+    document.getElementById('root').classList.add('root');
+    localStorage.setItem('msg','Save Me'); // put a value in local store
+    // render user table
+    let userData='';
+    users.forEach(u=>{
+        userData+=`<tr>
+                        <td>${u.id}</td>
+                        <td>${u.name}</td>        
+                    </tr>`;
+    });
+    document.getElementById('users').innerHTML= userData;
+}
+function rootMe(){
+    alert('Root Me was called');
+    // get a value from local store
+    let _msg = localStorage.getItem('msg');
+    document.getElementById('root').className= 'no-root';
+    document.getElementById('root').append(_msg);
+    //document.getElementById('root').classList.add('no-root');
+}
+//console.log(document)
+//users = Mohsin / John / Bob / Adam / Aarti / Sam / Steve / Roger 
+// document == this is being created / initialised by the browser to give us access to complete html page
+// DOM - > Document Object Model / Modelling
+
+</script>
+</head>
+
+<!-- 
+<body>
+    This is html so we can access html events & manage them
+</body>-->
+
+<body onload="loadStartUp();">
+    <input type="button" onclick="clickMe();" value="Click Me!"/>
+    <div id="div1">
+    </div>
+
+    <div id='root'>
+    </div>
+    <input type="button" value="-" onclick="decrement();"/>
+    <span id="counter"></span>
+    <input type="button" value="+" onclick="increment();"/>
+    <div id="data">
+        <table>
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                </tr>
+            </thead>
+            <tbody id="users">
+                
+            </tbody>
+        </table>
+    </div>
+</body>
