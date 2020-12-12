@@ -1,0 +1,16 @@
+{
+  "name": "hello-world",
+  "version": "1.0.0",
+  "description": "This is our first Node js Project ",
+  "main": "hello.js",
+  "scripts": {
+    "start": "node hello.js",
+    "debug": "nodemon hello.js"
+  },
+  "author": "Mohsin Khursheed",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  }
+}
