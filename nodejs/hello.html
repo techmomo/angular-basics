@@ -162,3 +162,16 @@ function rootMe(){
         </table>
     </div>
 </body>
+
+
+
+// three ways to use splice
+
+1. delete a value by index
+users.splice(2,1); e.g. users = [5,10,12,16]; result = [5,10,16]
+
+2. insert a new record but retain previous value
+users.splice(2,0,9); e.g. users = [5,10,12,16]; result = [5,10,9,12,16]
+
+3. insert a new record and delete the previous value
+users.splice(2,1,9); e.g. users = [5,10,12,16]; result = [5,10,9,16]
