@@ -177,3 +177,37 @@ console.log(mohsin.getUser());
 // I would the object structure defined for this, I want to use Interfaces & Association 
 // & anything else if need be
 // 
+
+
+//
+interface MyArr{ // array type interfaces 
+    [key:number]:number
+}
+interface Irr{
+    nums:number[]
+}
+
+let _nums:MyArr = [12,14,5];
+console.log(_nums[1]);
+let _nums1:Irr ={ nums:[8,8] };  //[1,2];
+
+// 
+interface CallMe{ // function type interfaces - similar to functional interfaces in Java 8 or above
+    (str:string):string
+    //callMe: (str:string)=>string // well defined method -- method with proper name
+}
+
+let callMe:CallMe = (str:string)=>{
+    return str;
+}
+console.log(callMe("Called Me!"));
+
+// Functional Interface in Java 
+//@FunctionalInterface
+// interface I1{
+//     String callMe(String str);
+// }
+
+// // define lambda
+// String callMe = (str)->System.out.println(str);
+// callMe("Called Me");

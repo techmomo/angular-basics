@@ -125,3 +125,10 @@ var mohsin = {
 };
 console.log(mohsin.user);
 console.log(mohsin.getUser());
+var _nums = [12, 14, 5];
+console.log(_nums[1]);
+var _nums1 = { nums: [8, 8] }; //[1,2];
+var callMe = function (str) {
+    return str;
+};
+console.log(callMe("Called Me!"));
