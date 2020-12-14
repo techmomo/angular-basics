@@ -1,16 +1,8 @@
-function sayHello(){
-    console.log('Hello');
-}
-sayHello();
-// es6
-const message =(_msg)=>{
-    console.log(`Hello ${_msg}`);
-}
-message('Mohsin');
+const { types } = require("util")
 
+//data types
 
-var num = 10;
-console.log(num);
+// declaring variables in ts
+// var / let & const
 
-num =  parseInt('Hello'); // invalid operation fails the logic
-console.log(num);
+var str:number;
