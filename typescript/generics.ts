@@ -34,3 +34,4 @@ const obj4 = new MyMap<string,string>(); // give some default values
 obj4.add("ONE", JSON.stringify({ id:4, name : "sample"}));
 
 obj4.get();
+

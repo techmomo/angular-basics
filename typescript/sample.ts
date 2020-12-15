@@ -6,8 +6,6 @@
 // mix = 'str';
 // //mix = true;
 
-import { SSL_OP_SSLEAY_080_CLIENT_DH_BUG } from "constants";
-
 // var arrNum:number[] | string[];
 // //arrNum= ["Str",10,"str",10];
 
@@ -211,3 +209,25 @@ console.log(callMe("Called Me!"));
 // // define lambda
 // String callMe = (str)->System.out.println(str);
 // callMe("Called Me");
+
+// method overloading
+// function testMe(num1:string){
+
+// }
+// function testMe(num1:number){
+    
+// }
+function testMe(param:any) {
+    
+}
+
+function testMe1<T>(param:T) {
+    
+}
+// using any as data type
+testMe('Hello how r u');
+testMe(9);
+// using generics
+testMe1<number>(12);
+testMe1<string>("Hello");
+
