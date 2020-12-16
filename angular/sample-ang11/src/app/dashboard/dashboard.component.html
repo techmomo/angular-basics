@@ -1,0 +1,50 @@
+<div class='counter'>
+    Counter is : {{counter}}
+</div>
+<!--variables accessed from controller files aka .ts file are referred within curly braces -->
+
+<div class="left">
+<table class="table">
+    <tr>
+        <th>SUM</th>
+        <th>DIFF</th>
+        <th>PRODUCT</th>
+    </tr>
+    <tr class="tr">
+        <td>{{first+second}}</td>
+        <td>
+            <div *ngIf="first > second then default;">
+            </div>
+            <ng-template #diff>
+                {{first-second}}
+            </ng-template>
+            <ng-template #default>
+                {{first}} is smaller than 5
+            </ng-template>
+
+        </td>
+        <td>{{first*second}}</td>
+    </tr>
+</table>
+</div>
+<div class="left">
+    <table class="table">
+        <div *ngIf="users; else noRecords">
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Email</th>
+            </tr>
+            <tr class="tr" *ngFor="let u of users" > <!-- angular's version of for loop is *ngFor-->
+                <!-- <div *ngIf="u.id%2==0"> -->
+                    <td>{{u.id}}</td>
+                    <td>{{u.name}}</td>
+                    <td>{{u.email}}</td>
+                <!-- </div> -->
+            </tr>
+        </div>
+        <ng-template #noRecords>
+            <h3>{{errorMessage}}</h3>
+        </ng-template>
+    </table>
+</div>
