@@ -24,28 +24,28 @@ export class DashboardComponent implements OnInit,OnDestroy {
     this.first =13;
     this.second = 5;
     //define users
-    // this.users=[
-    //   {
-    //     id:1,
-    //     name: 'Tom',
-    //     email: 'tom@tt.com'
-    //   },
-    //   {
-    //     id:2,
-    //     name: 'John',
-    //     email: 'joe@tt.com'
-    //   },
-    //   {
-    //     id:3,
-    //     name: 'Steve',
-    //     email: 'st@tt.com'
-    //   },
-    //   {
-    //     id:4,
-    //     name: 'Adam',
-    //     email: 'adam@tt.com'
-    //   }
-    // ]
+    this.users=[
+      {
+        id:1,
+        name: 'Tom',
+        email: 'tom@tt.com'
+      },
+      {
+        id:2,
+        name: 'John',
+        email: 'joe@tt.com'
+      },
+      {
+        id:3,
+        name: 'Steve',
+        email: 'st@tt.com'
+      },
+      {
+        id:4,
+        name: 'Adam',
+        email: 'adam@tt.com'
+      }
+    ]
   }
   ngOnDestroy():void{ // close up method
     this.counter = 0;
