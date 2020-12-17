@@ -1,0 +1,27 @@
+<div *ngIf="users then userExists; else noUsers;">
+</div>
+<ng-template #userExists>
+<table>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Date of Birth</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let u of users">
+            <td>{{u.id}}</td>
+            <td><input type="text" [value]="u.name" #username /> </td>
+            <td>{{u.email}}</td>
+            <td>{{u.dob}}</td>
+            <td><input type="button" value="Delete" class="light-button" (click)="eDeleteUser(username)" ></td>
+        </tr>
+    </tbody>
+</table>
+</ng-template>
+<ng-template #noUsers>
+    <h3 class="error">{{errorMessage}}</h3>
+</ng-template>
