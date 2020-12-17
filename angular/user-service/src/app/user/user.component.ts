@@ -60,6 +60,13 @@ export class UserComponent implements OnInit {
   }
   eGetId(event){
     console.log(event.value);
+    this.filterBySalary(1);
+  }
+  filterBySalary(pid:number):void{
+    this.users.sort((a,b)=>{ 
+      return b.id - a.id;
+    });
+    console.log(this.users);
   }
 }
 
