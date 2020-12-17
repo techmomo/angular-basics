@@ -13,6 +13,9 @@
         </tr>
     </thead>
     <tbody>
+        <select name="" [id]="name" (change)="eGetId($event.target)" >
+            <option *ngFor="let u of users" value="{{u.id}}">{{u.name}}</option>
+        </select>
         <tr *ngFor="let u of users">
             <td>{{u.id}}</td>
             <td><input type="text" [value]="u.name"/> </td>
@@ -26,3 +29,5 @@
 <ng-template #noUsers>
     <h3 class="error">{{errorMessage}}</h3>
 </ng-template>
+
+
