@@ -1,5 +1,6 @@
 <div *ngIf="users then userExists; else noUsers;">
 </div>
+
 <ng-template #userExists>
 <table>
     <thead>
@@ -14,10 +15,10 @@
     <tbody>
         <tr *ngFor="let u of users">
             <td>{{u.id}}</td>
-            <td><input type="text" [value]="u.name" #username /> </td>
+            <td><input type="text" [value]="u.name"/> </td>
             <td>{{u.email}}</td>
             <td>{{u.dob}}</td>
-            <td><input type="button" value="Delete" class="light-button" (click)="eDeleteUser(username)" ></td>
+            <td><input type="button" value="Delete" class="light-button" (click)="eDeleteUser(u.id)" ></td>
         </tr>
     </tbody>
 </table>
