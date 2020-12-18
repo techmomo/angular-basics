@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
-import { Project } from '../data/Project';
-import { projects } from '../data/projects';
+import { Project } from '../entities/Project';
+import { masterProjects } from '../data/projects';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProjectService {
 
-  private projects:Project[] = projects;
+  private projects:Project[] = masterProjects;
   constructor() { }
 
   getProjects():Project[]{

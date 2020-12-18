@@ -1,6 +1,6 @@
-import { Project } from "./Project";
+import { Project } from "../entities/Project";
 
-export let projects:Project[] = [
+export let masterProjects:Project[] = [
     {
         pid: 1,
         pname: 'ATT',
