@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Project } from '../entities/Project';
-import { masterProjects } from '../data/projects';
+import { masterProjects } from '../data/project.data';
 
 @Injectable({
   providedIn: 'root'

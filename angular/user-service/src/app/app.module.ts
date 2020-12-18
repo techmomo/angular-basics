@@ -6,6 +6,8 @@ import { UserComponent } from './user/user.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { ProjectComponent } from './project/project.component';
+import { LoginComponent } from './login/login.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -13,10 +15,11 @@ import { ProjectComponent } from './project/project.component';
     UserComponent,
     FooterComponent,
     HeaderComponent,
-    ProjectComponent
+    ProjectComponent,
+    LoginComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

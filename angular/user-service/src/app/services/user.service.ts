@@ -1,3 +1,4 @@
+import { parseI18nMeta } from '@angular/compiler/src/render3/view/i18n/meta';
 import { Injectable } from '@angular/core';
 import { Service } from './Service';
 
@@ -79,3 +80,34 @@ export class UserService implements Service{
 // split logic across empservice & project service
 // move master data to specific file e,g. user.ts has users , emp.ts has employees & project.ts has projects
 
+// emp1 = {
+//   id: 1,
+//   name: 'xyz',
+//   email: 'ee@gg.com', // should come from user entity
+//   pname: 'ATT',  // this is coming from project entity
+//   salary: 1000 // this is coming from employee entity
+// }
+
+// emp2 = {
+//   id: 2,
+//   name: 'abc',
+//   email: 'ee@gg.com', // should come from user entity
+//   pname: 'ATT',  // this is coming from project entity
+//   salary: 2500 // this is coming from employee entity
+// }
+
+
+
+//projects dropdown == list of prjs
+
+// emps dropdown == list of emps
+
+// add emp 
+
+// p1   
+// p2
+
+// e1
+// e2
+
+// ADD
