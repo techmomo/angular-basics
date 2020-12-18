@@ -72,3 +72,10 @@ export class UserService implements Service{
 
   }
 }
+
+
+// Assignment :
+// Move business logic to service layer
+// split logic across empservice & project service
+// move master data to specific file e,g. user.ts has users , emp.ts has employees & project.ts has projects
+
