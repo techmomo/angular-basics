@@ -1,11 +1,23 @@
 import { Injectable } from '@angular/core';
+import { Service } from './Service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class UserService {
+export class UserService implements Service{
   constructor() { }
 
+  //
+  get(){
+
+  }
+  add(){
+
+  }
+  getAll(){
+
+  }
+  
   getMessage():void{
     console.log("User Service : getMessage()");
   }

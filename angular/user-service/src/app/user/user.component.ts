@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { EmployeeService } from '../services/employee.service';
+import { Service } from '../services/Service';
 import { UserService } from '../services/user.service';
 
 @Component({
@@ -10,11 +12,17 @@ export class UserComponent implements OnInit {
 
   users:any[];
   errorMessage:string;
-  // inject userservice into user component
-  constructor(private service:UserService) { }
+  // inject userservice into user component 
+  // constructor injection
+  constructor(private service:UserService,private eService:EmployeeService) { }
 
   ngOnInit(): void {
     this.users = this.service.buildUsers(); // build user array  
+    //this.myService.getAll();
+    // Service user = new UserService();
+    // Service emp = new EmployeeService();
+    // const user = new UserService();
+    // const emp = new EmployeeService();
   }
   // html events
   eDeleteUser(id:string){
@@ -58,3 +66,6 @@ export class UserComponent implements OnInit {
 //     salary: 600
 //   }
 // ]
+
+// create service
+// ng g s services/user(name of the service)
