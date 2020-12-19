@@ -14,3 +14,62 @@
         </tr>
     </table>
 </form>
+<fieldset>
+    <legend>Register User</legend>
+    <div *ngIf="error" class="error">
+    {{error}}
+    </div>
+    <form [formGroup]="registration" (submit)="register()">
+    <table>
+        <tr>
+            <td>Email</td>
+            <td>
+                <input type="text" name="email" formControlName="email" />
+                <div *ngIf="registration.status == 'INVALID'">
+                    <div *ngIf="registration.controls['email'].errors">
+                        <div *ngIf="registration.controls['email'].errors.required">
+                            Email cannot be left blank
+                        </div>
+                        <div *ngIf="registration.controls['email'].errors.email">
+                            Please specify a valid email address e.g. gg@gmail.com
+                        </div>
+                    </div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>Password</td>
+            <td><input type="password" name="password" formControlName="password"/>
+                <div *ngIf="registration.controls['password'].errors">
+                    Password cannot be left blank
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2"><input type="submit" value="Register" /></td>
+        </tr>
+    </table>
+</form>
+</fieldset>
+<fieldset>
+    <legend>Search Users</legend>
+    <form [formGroup]="userForm" (submit)="getUsers()">
+        <input type="number" formControlName="salary" />
+        <input type="submit" value="Search By Salary" />
+    </form>
+</fieldset>
+<h2>Users</h2>
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Salary</th>
+    </tr>
+        <tr *ngFor="let u of users">
+            <td>{{u.id}}</td>
+            <td>{{u.name}}</td>
+            <td>{{u.email}}</td>
+            <td>{{u.salary}}</td>
+        </tr>
+</table>

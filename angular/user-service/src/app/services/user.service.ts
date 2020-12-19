@@ -1,22 +1,18 @@
 import { parseI18nMeta } from '@angular/compiler/src/render3/view/i18n/meta';
 import { Injectable } from '@angular/core';
-import { Service } from './Service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class UserService implements Service{
+export class UserService{
   constructor() { }
 
-  //
-  get(){
-
-  }
-  add(){
-
-  }
-  getAll(){
-
+  filterUsersBySalary(salary:number):Promise<string>{
+    // fetch all users from REST API 
+    // call a rest api
+    // STEP 1 : test status api
+    const url = 'http://localhost:12345' + `/users/salary/greater/${salary}`;
+    return fetch(url).then(res=>res.json()).then(res=>res.data);
   }
   
   getMessage():void{
