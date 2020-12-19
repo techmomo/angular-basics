@@ -8,6 +8,7 @@ import { HeaderComponent } from './header/header.component';
 import { ProjectComponent } from './project/project.component';
 import { LoginComponent } from './login/login.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     LoginComponent
   ],
   imports: [
-    BrowserModule,ReactiveFormsModule
+    BrowserModule,ReactiveFormsModule, HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

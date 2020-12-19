@@ -18,12 +18,15 @@ export class LoginComponent implements OnInit {
   error:string
   users:any;
   userForm:FormGroup
+  saveUserForm:FormGroup
 
   project:Project = masterProjects[0];
   constructor(private builder:FormBuilder,private service:UserService) { 
     this.buildLoginForm();
     this.buildRegisterForm(); 
     this.buildUserForm();
+    this.buildSaveUserForm();
+    
     this.errorMessage='' // reset to default
     console.log(this.registration);
   }
@@ -49,6 +52,13 @@ export class LoginComponent implements OnInit {
     });
   }
 
+  buildSaveUserForm(){
+    this.saveUserForm = this.builder.group({
+      uname: '',
+      uemail: '',
+      usalary: 0
+    });
+  }
   loginUser(){
     //console.log(this.login);
     this.user= {
@@ -71,9 +81,23 @@ export class LoginComponent implements OnInit {
     // save user 
   }
   getUsers(){
-    this.service.filterUsersBySalary(this.userForm.value.salary).then(data=>{
-      console.log(data);
-      this.users = data;
+    //this.service.filterUsersBySalary(this.userForm.value.salary);
+    // this.service.filterUsersBySalary(this.userForm.value.salary).then(data=>{
+    //   console.log(data.data);
+    //   this.users = data.data;
+    // });
+    this.service.filterUsersBySalary(this.userForm.value.salary).subscribe(res=>{
+      console.log(res.data);
+      this.users = res.data;
     });
+  }
+  saveUser(){
+    let newUser = {
+      name: this.saveUserForm.value.uname,
+      email: this.saveUserForm.value.uemail,
+      salary : this.saveUserForm.value.usalary,
+    }
+    this.service.saveUser(newUser); // save user via rest api
+    this.getUsers(); // re load data
   }
 }

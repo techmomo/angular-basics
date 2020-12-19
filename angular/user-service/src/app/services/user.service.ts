@@ -1,19 +1,42 @@
-import { parseI18nMeta } from '@angular/compiler/src/render3/view/i18n/meta';
 import { Injectable } from '@angular/core';
+import { HttpClient } from "@angular/common/http";
+import { environment } from "../../environments/environment";
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService{
-  constructor() { }
 
-  filterUsersBySalary(salary:number):Promise<string>{
-    // fetch all users from REST API 
-    // call a rest api
-    // STEP 1 : test status api
-    const url = 'http://localhost:12345' + `/users/salary/greater/${salary}`;
-    return fetch(url).then(res=>res.json()).then(res=>res.data);
+  baseUrl:string = environment.baseUserUrl
+
+  // DI for http client service
+  constructor(private http:HttpClient) { }
+
+  filterUsersBySalary(salary:number){ // http client with subcriber
+    const url = this.baseUrl +`/salary/greater/${salary}`;
+    // this.http.get(url).subscribe(res=>{ // get users from rest api using HTTP Client Module
+    //   res.data.forEach(element => {
+    //     console.log(element);
+    //   });
+    // })
+    return this.http.get(url); // just make a call to the rest api & return the actual subcriber object
   }
+  // filterUsersBySalary(salary:number):Promise<object>{ // http client module with promises
+  //   const url = this.baseUrl +`/salary/greater/${salary}`;
+  //   // this.http.get(url).subscribe(res=>{ // get users from rest api using HTTP Client Module
+  //   //   res.data.forEach(element => {
+  //   //     console.log(element);
+  //   //   });
+  //   // })
+  //   return this.http.get(url).toPromise();
+  // }
+  // filterUsersBySalary(salary:number):Promise<string>{ // fetch api with promises
+  //   // fetch all users from REST API 
+  //   // call a rest api
+  //   // STEP 1 : test status api
+  //   const url = 'http://localhost:12345' + `/users/salary/greater/${salary}`;
+  //   return fetch(url).then(res=>res.json()).then(res=>res.data);
+  // }
   
   getMessage():void{
     console.log("User Service : getMessage()");
@@ -68,8 +91,15 @@ export class UserService{
   getUserById(users:any[],id:string){
 
   }
-}
 
+  saveUser(user:any){ // http client to use post method i.e. send request body
+    let url = this.baseUrl + '/add';
+    this.http.post(url,user)
+    .toPromise()
+    .then(rs=>console.log(rs))
+    .catch(e=>console.error(e));
+  }
+}
 
 // Assignment :
 // Move business logic to service layer

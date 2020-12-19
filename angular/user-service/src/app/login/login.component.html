@@ -52,6 +52,18 @@
 </form>
 </fieldset>
 <fieldset>
+    <legend>ADD USER</legend>
+    <form [formGroup]="saveUserForm" (submit)="saveUser()">
+        <table>
+            <tr>
+                <td><input type="text" formControlName="uname" placeholder="Name..."> </td></tr>
+            <tr><td><input type="text" formControlName="uemail" placeholder="Email..."> </td></tr>
+            <tr><td><input type="number" formControlName="usalary" placeholder="Salary..."> </td></tr>
+            <tr><td> <input type="submit" value="Save User" /> </td></tr>
+        </table>
+    </form>
+</fieldset>
+<fieldset>
     <legend>Search Users</legend>
     <form [formGroup]="userForm" (submit)="getUsers()">
         <input type="number" formControlName="salary" />
