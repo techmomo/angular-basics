@@ -38,7 +38,9 @@
             <tr class="tr" *ngFor="let u of users" > <!-- angular's version of for loop is *ngFor-->
                 <!-- <div *ngIf="u.id%2==0"> -->
                     <td>{{u.id}}</td>
-                    <td>{{u.name}}</td>
+                    <td>
+                        <div *ngIf="u.name == 'Tom'">    {{u.name}} </div>
+                    </td>
                     <td>{{u.email}}</td>
                 <!-- </div> -->
             </tr>

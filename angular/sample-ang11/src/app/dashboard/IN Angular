@@ -1,0 +1,28 @@
+IN Angular
+
+MVC ->
+
+MVC or VVM/MVVM
+
+MODEL -> class that represents a model (an entity)
+VIEW -> .html
+CONTROLLER -> .ts 
+
+Angular is primarily based on component driven architecture
+A component -> has UI(html) / has business layer(ts class) / may or maynot have model(ts) -> 
+a component can be represented or used as an html element (e.g. <my-component></my-component>)
+
+// we can create components either manually as one by one setting up the files or using angular cli
+
+// as a standard covention followed by angular
+component name : nameofthecomponent.component.extension(html,js,css)
+
+
+// to create a new angular application from start
+// follow these steps
+// 1. npm i @angular/cli -g 
+// 2. test ng 
+// 3. go to your desired folder
+// 4. ng new name-ofur-angularapp (e.g. ng new hello-world)
+// 5. ng serve - it should start angular at 4200 (localhos:4200)
+

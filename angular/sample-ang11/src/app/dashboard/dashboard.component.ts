@@ -12,7 +12,6 @@ export class DashboardComponent implements OnInit,OnDestroy {
   second:number;
   users:any[];
   errorMessage:string;
-
   constructor() { 
     this.counter = 1;
     console.log("HELLO");
@@ -20,10 +19,26 @@ export class DashboardComponent implements OnInit,OnDestroy {
   ngOnInit(): void { // start up method
     this.counter = 2;
     console.log("Ng INIT");
-    this.errorMessage='No Records Found';
+    this.loadData(); // initialise start up data 
+  }
+  ngOnDestroy():void{ // close up method
+    this.counter = 0;
+    console.log("Ng Destroy");
+  }
+
+  loadData(){
+    this.loadNums();
+    this.loadUsers();
+    this.getErrorMessage();
+  }
+  loadNums():void{
     this.first =13;
     this.second = 5;
-    //define users
+  }
+  getErrorMessage():void{
+    this.errorMessage='No Records Found';
+  }
+  loadUsers():void{
     this.users=[
       {
         id:1,
@@ -47,8 +62,7 @@ export class DashboardComponent implements OnInit,OnDestroy {
       }
     ]
   }
-  ngOnDestroy():void{ // close up method
-    this.counter = 0;
-    console.log("Ng Destroy");
+  display():void{
+    alert('Hello User');
   }
 }
