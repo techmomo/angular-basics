@@ -6,6 +6,9 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { HomeComponent } from './home/home.component';
 import { LogoutComponent } from './logout/logout.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { DetailsComponent } from './users/details/details.component';
+import { EditComponent as UserEditComponent } from './users/edit/edit.component';
+import { UsersComponent } from './users/users.component';
 
 const routes: Routes = [
   {
@@ -19,6 +22,24 @@ const routes: Routes = [
   },
   {
     path: 'dashboard', component: DashboardComponent
+  },
+  {
+    path: 'users',component: UsersComponent,
+    pathMatch: 'prefix',
+    children:[
+      {
+        path: 'view', component: UserEditComponent
+      },
+      {
+        path: 'show-details',component: DetailsComponent
+      }
+    ]
+  },
+  {
+    path: 'users/edit/:id', component: UserEditComponent
+  },
+  {
+    path: 'users/details', component: DetailsComponent
   },
   {
     path: 'logout', component: LogoutComponent

@@ -12,6 +12,9 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { TopmenuComponent } from './topmenu/topmenu.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LogoutComponent } from './logout/logout.component';
+import { UsersComponent } from './users/users.component';
+import { EditComponent } from './users/edit/edit.component';
+import { DetailsComponent } from './users/details/details.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +26,10 @@ import { LogoutComponent } from './logout/logout.component';
     LoginComponent,
     DashboardComponent,
     TopmenuComponent,
-    LogoutComponent
+    LogoutComponent,
+    UsersComponent,
+    EditComponent,
+    DetailsComponent
   ],
   imports: [
     BrowserModule,

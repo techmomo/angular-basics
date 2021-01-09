@@ -1,0 +1,14 @@
+<table>
+    <tr>
+        <th>ID</th>
+        <th>NAME</th>
+    </tr>
+    <tr *ngFor="let u of users">
+        <td><a routerLink="/users/edit/{{u.id}}">{{u.id}}</a></td>
+        <td>{{u.name}}</td>
+        <td><input type="button" (click)="getUserDetails(u.id)" value="Details..." /></td>
+    </tr>
+</table>
+
+...............
+<router-outlet></router-outlet>
