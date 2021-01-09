@@ -1,0 +1,20 @@
+<ul>
+    <li>
+      <a routerLink="home">Home</a>
+    </li>
+    <li>
+      <a routerLink="aboutus">About Us</a>
+    </li>
+    <li>
+      <a routerLink="contact-us">Contact Us</a>
+    </li>
+    <span *ngIf="isLogged">
+      <li>
+        <a routerLink="dashboard">Dashboard</a>
+      </li>
+    </span>
+  </ul>
+  <div style="float:right" *ngIf="isLogged">
+    <a routerLink="logout">LOGOUT</a>
+  </div>
+  

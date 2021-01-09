@@ -1,0 +1,19 @@
+<fieldset>
+    <legend>Login</legend>
+    <form [formGroup]="loginForm" (submit)="loginUser()" novalidate>
+        <table>
+            <span *ngIf="loginForm.status == 'INVALID' " style="color:red">{{error}}</span>
+            <tr>
+                <td>Username</td>
+                <td><input type="text" name="username" formControlName="username"/></td>
+            </tr>
+            <tr>
+                <td>Password</td>
+                <td><input type="password" name="password" formControlName="password"/></td>
+            </tr>
+            <tr>
+                <td><input type="submit" value="LOGIN"/></td>
+            </tr>
+        </table>
+    </form>
+</fieldset>
