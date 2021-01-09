@@ -19,7 +19,6 @@ export class LoginComponent implements OnInit {
   }
 
   loginUser(){
-    console.log(this.loginForm);
     if(this.loginForm.status == 'INVALID'){
       this.error = 'Username / Password cannot be left empty';
     }else{
@@ -41,5 +40,6 @@ export class LoginComponent implements OnInit {
         username: new FormControl('',Validators.required),
         password: new FormControl('',Validators.required)
       });
+      this.loginForm.setErrors({ status: 'VALID'});
   }
 }
