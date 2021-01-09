@@ -6,6 +6,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { HomeComponent } from './home/home.component';
 import { LogoutComponent } from './logout/logout.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { ParentComponent } from './parent/parent.component';
 import { DetailsComponent } from './users/details/details.component';
 import { EditComponent as UserEditComponent } from './users/edit/edit.component';
 import { UsersComponent } from './users/users.component';
@@ -40,6 +41,9 @@ const routes: Routes = [
   },
   {
     path: 'users/details', component: DetailsComponent
+  },
+  {
+    path: 'parent', component: ParentComponent
   },
   {
     path: 'logout', component: LogoutComponent

@@ -15,6 +15,8 @@ import { LogoutComponent } from './logout/logout.component';
 import { UsersComponent } from './users/users.component';
 import { EditComponent } from './users/edit/edit.component';
 import { DetailsComponent } from './users/details/details.component';
+import { ParentComponent } from './parent/parent.component';
+import { ChildComponent } from './child/child.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,9 @@ import { DetailsComponent } from './users/details/details.component';
     LogoutComponent,
     UsersComponent,
     EditComponent,
-    DetailsComponent
+    DetailsComponent,
+    ParentComponent,
+    ChildComponent
   ],
   imports: [
     BrowserModule,
