@@ -1,0 +1,23 @@
+<div class="chartjs-container" style="width: 600px;height: 800px;">
+    <canvas baseChart
+    [datasets]= "linesData"
+    [labels]= "linesLabels"
+    [colors]= "linesColors"
+    [legend]= "linesLegend"
+    [chartType]="lineChartType"
+    [plugins]="lineChartPlugins"
+    >
+    </canvas>
+</div>
+
+<div class="chartjs-container" style="width: 800px;height: 900px;">
+    <canvas baseChart
+    [data]= "pieData"
+    [labels]= "pieLabels"
+    [colors]= "pieColors"
+    [legend]= "pieLegend"
+    [chartType]="pieChartType"
+    [plugins]="pieChartPlugins"
+    >
+    </canvas>
+</div>
