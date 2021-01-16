@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { RxjsService } from './rxjs.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular-routing';
+  
+  constructor(private rxjsService:RxjsService){
+    //
+  }
 }
